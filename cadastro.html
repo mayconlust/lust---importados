@@ -12,7 +12,7 @@
         <h2 class="text-2xl font-bold text-yellow-500 mb-6 text-center uppercase tracking-tighter">Dados para Envio e NF-e</h2>
         
         <form action="https://formspree.io/f/xvzvwdlk" method="POST" class="space-y-4">
-            <input type="hidden" name="_next" id="next-page" value="">
+            <input type="hidden" name="_next" id="linkPagamento" value="">
             <div>
                 <label class="block text-xs text-gray-400 uppercase mb-1">Nome Completo</label>
                 <input type="text" name="nome" required class="w-full bg-slate-800 border border-slate-700 rounded-md p-3 focus:border-yellow-500 outline-none">
@@ -46,8 +46,8 @@
     const linkProd = urlParams.get('checkout');
     
     if (linkProd) {
-        // O nome aqui dentro tem que ser igual ao ID do input lá de cima
-        document.getElementById('next-page').value = linkProd;
+        // Esta linha coloca o link do Mercado Pago no campo invisível
+        document.getElementById('linkPagamento').value = linkProd;
     }
 </script>
 
